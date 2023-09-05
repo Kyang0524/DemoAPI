@@ -11,9 +11,10 @@ namespace DemoWeb.Controllers
     public class DemoApiController : JsonNetController
     {
 
-        public class ModelParameter
+        public class ModelParameter //Object
         {
-            public string Name { get; set; }
+            public string Name { get; set; } 
+            public string Id { get; set; }
         }
 
 
@@ -23,11 +24,11 @@ namespace DemoWeb.Controllers
             try
             {
                 return Json(new ApiSucc("1111",
-                    CodecModule.PostStringfunction(InputText.Name)));//跳轉到CodecModule.cs 的某function執行動作
+                    CodecModule.PostStringfunction(InputText.Id,InputText.Name)));//跳轉到CodecModule.cs 的某function執行動作，然後 return 資料回呼叫地方
             }
             catch (Exception ex)
             {
-                return Json(new ApiError("500", ex.Message));
+                return Json(new ApiError("500", ex.Message));//錯誤跳轉信息
             }
         } 
 
@@ -43,7 +44,7 @@ namespace DemoWeb.Controllers
             }
             catch (Exception ex)
             {
-                return Json(new ApiError("500", ex.Message));
+                return Json(new ApiError("500", ex.Message));//錯誤跳轉信息
             }
         }
 
@@ -54,11 +55,11 @@ namespace DemoWeb.Controllers
             try
             {
                 return Json(new ApiSucc("1113",
-                    CodecModule.GetStrNChangefunction(inputText)));//跳轉到CodecModule.cs 的某function執行動作
+                    CodecModule.GetStrNChangefunction(inputText)));//跳轉到CodecModule.cs 的某function執行動作，然後 return 資料回呼叫地方
             }
             catch (Exception ex)
             {
-                return Json(new ApiError("500", ex.Message));
+                return Json(new ApiError("500", ex.Message));//錯誤跳轉信息
             }
         }
 

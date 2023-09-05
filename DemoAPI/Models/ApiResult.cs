@@ -42,11 +42,11 @@ namespace DemoAPI.Models
         /// <param name="data"></param>
         public ApiSucc(string code, string data)
         {
-            Code = code;
+            Code = code;//代碼可自定義
             Succ = true;
-            Message = "";
-            DataTime = DateTime.Now;
-            Data = data;
+            Message = "";//成功是 錯誤訊息為空值
+            DataTime = DateTime.Now; //回傳的時間
+            Data = data;//回傳的資料
         }
     }
 
@@ -59,11 +59,11 @@ namespace DemoAPI.Models
         /// <param name="message"></param>
         public ApiError(string code, string message)
         {
-            Code = code;
+            Code = code;//錯誤代碼為500
             Succ = false;
-            this.DataTime = DateTime.Now;
-            Message = message;
-            Data = "";
+            this.DataTime = DateTime.Now;//回傳的時間
+            Message = message; //回傳錯誤訊息
+            Data = "";//失敗時 資料為空值
         }
     }
 }
