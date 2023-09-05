@@ -103,7 +103,6 @@
     </Compile>
     <Compile Include="Models\ApiResult.cs" />
     <Compile Include="Models\CodecModule.cs" />
-    <Compile Include="Models\SecurityManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

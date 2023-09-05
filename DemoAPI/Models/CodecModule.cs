@@ -11,7 +11,7 @@ namespace DemoAPI.Models
     public class CodecModule
     {
 
-        public static string PostString(string InputText)
+        public static string PostStringfunction(string InputText)
         {
             string AfterPost = "Hello!" + InputText;
             return AfterPost;
@@ -22,7 +22,7 @@ namespace DemoAPI.Models
              return Name;
 
         }
-        public static string GetStrNChange(string InputText)
+        public static string GetStrNChangefunction(string InputText)
         {
             string Text = "RT_LAB DemoWebApi " + InputText;
             return Text;
