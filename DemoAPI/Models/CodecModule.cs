@@ -19,7 +19,7 @@ namespace DemoAPI.Models
 
         public static string GetStrNChangefunction(string InputText)
         {
-            string Text = "RT_LAB DemoWebApi " + InputText; //執行動作，需要將接收到的資料修改成什麼
+            string Text = "已经收到了信息:" + InputText +",这是我的回复"; //執行動作，需要將接收到的資料修改成什麼
             return Text;
         }
 
