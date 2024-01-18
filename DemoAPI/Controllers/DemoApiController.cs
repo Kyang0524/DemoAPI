@@ -1,5 +1,10 @@
-﻿using DemoAPI.Models;
+﻿using ACadSharp;
+using ACadSharp.IO;
+using DemoAPI.Models;
+using DocIO_Example;
 using NLog;
+using Rhino.Compute;
+using Rhino.FileIO;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,6 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -39,25 +45,32 @@ namespace DemoWeb.Controllers
         {
 
             //Debug.WriteLine("recevied Other server file,file name is :" + file.FileName +", and dictionary key and value are:" + input);
-            _logger.Info("recevied file:{0}  dictionary key and value:{1}",file.FileName,input);
+            _logger.Info("recevied file:{0}  dictionary key and value:{1}", file.FileName, input);
 
             //demo
-            string[] filename = file.FileName.Split('.');
-            string Filename = filename[0] + "Convert";
-            string FileType = "." + filename[filename.Length - 1];
-            
-            
+            //string[] filename = file.FileName.Split('.');
+            //string Filename = filename[0] + "Convert";
+            //string FileType = "." + filename[filename.Length - 1];
+
+
+
+
+
+
             //Stream to byte to base64 string
             byte[] text = ConvertStreamToByte(file.InputStream);
             var str = Convert.ToBase64String(text);
 
-
+            Example.ConvertDwgToRhino(@"D:\\Test1_cad_.dwg", @"D:\\SimulationFTP");
             //Code....
+            //string OutputRhinoFileStream = file.FileName.Replace(".dwg", ".3dm");
+            //DwgReader CADReader = new DwgReader(file.InputStream);
+            //CadDocument CADdoc = CADReader.Read();
 
 
             //base64 string to stream
-            Stream stream = ConvertString2Stream(str);
-            await PostFile(stream, Filename, FileType);
+            //Stream stream = ConvertString2Stream(str);
+            //await PostFile(stream, Filename, FileType);
 
         }
 

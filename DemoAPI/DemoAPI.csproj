@@ -47,6 +47,10 @@
     <Reference Include="ACadSharp, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ACadSharp.1.5.0-alpha\lib\net48\ACadSharp.dll</HintPath>
     </Reference>
+    <Reference Include="DocIO_Test, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\DocIO_Test\bin\Debug\net48\DocIO_Test.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=1.4.2.13, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.1.4.2\lib\netstandard2.0\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
@@ -125,12 +129,16 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DemoApiController.cs" />
+    <Compile Include="Models\AuthToken.cs" />
+    <Compile Include="Models\ConvertDwgToRhino.cs" />
     <Compile Include="Models\JsonNetController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ApiResult.cs" />
     <Compile Include="Models\CodecModule.cs" />
+    <Compile Include="Models\Program.cs" />
+    <Compile Include="Models\RhinoCompute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +161,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="D:\DocIO_Example\DocIO_Example\bin\Debug\net48\librhino3dm_native.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
